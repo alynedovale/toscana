@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=210mm, initial-scale=1.0">
+  <title>Os Segredos de Chianti – Guia Romântico</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&family=Crimson+Text:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --toscana-terracota: #CD853F;
+      --toscana-vinho: #722F37;
+      --toscana-dourado: #DAA520;
+      --toscana-verde: #6B8E23;
+      --toscana-creme: #FDF5E6;
+      --toscana-marrom: #8B4513;
+      --texto-principal: #2C1810;
+      --texto-secundario: #5D4E37;
+    }
+    html { background: var(--toscana-creme);}
+    body {
+      font-family: 'Crimson Text', Georgia, serif;
+      color: var(--texto-principal);
+      margin: 0; padding: 0;
+      min-width: 210mm; max-width: 210mm;
+      margin: 0 auto;
+      background: linear-gradient(135deg, var(--toscana-creme), #fffbe7 80%);
+    }
+    .ebook-page {
+      background: white;
+      min-height: 297mm;
+      box-shadow: 0 2px 24px rgba(44,24,16,0.09);
+      margin: 0 auto 36px auto;
+      border-radius: 18px;
+      padding: 2.5cm 2.5cm 2cm 2.5cm;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Capa */
+    .ebook-cover {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      min-height: 297mm;
+      background: linear-gradient(135deg, var(--toscana-vinho) 0%, var(--toscana-terracota) 50%, var(--toscana-dourado) 100%);
+      color: white;
+      position: relative;
+      text-align: center;
+      border-radius: 18px 18px 0 0;
+      overflow: hidden;
+    }
+    .cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px; font-weight: 900;
+      margin-top: 2cm;
+      text-shadow: 2px 4px 12px rgba(44,24,16,0.09);
+      letter-spacing: 2px;
+    }
+    .cover-subtitle {
+      font-family: 'Dancing Script', cursive;
+      font-size: 32px;
+      margin-top: 12px;
+      color: var(--toscana-dourado);
+      opacity: 0.93;
+    }
+    .cover-author {
+      font-family: 'Lato', sans-serif;
+      font-size: 20px;
+      margin: 1.8cm 0 1.2cm 0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .cover-ornament {
+      margin: 40px 0 32px 0;
+      width: 90%;
+      height: 24px;
+      background: none;
+      position: relative;
+    }
+    .cover-ornament:before {
+      content: '🍇   🍃   🍇   🍃   🍇';
+      font-size: 28px;
+      color: var(--toscana-dourado);
+      letter-spacing: 8px;
+      opacity: .9;
+      font-family: 'Dancing Script', cursive;
+      position: absolute; width: 100%; text-align: center;
+      left: 0; top: 0;
+    }
+    .cover-watermark {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      opacity: 0.06;
+      height: 50%; background: url('https://img.freepik.com/premium-vector/tuscany-vineyard-landscape-engraving-style_43633-2245.jpg') center bottom/cover no-repeat;
+    }
+    /* Ornamentos */
+    .ornamental-border {
+      border-top: 3px solid var(--toscana-terracota);
+      border-bottom: 1px solid var(--toscana-dourado);
+      margin: 36px 0 28px 0;
+      position: relative;
+    }
+    .ornamental-border:before {
+      content: '🍇 🍃';
+      font-size: 20px; color: var(--toscana-verde);
+      position: absolute; left: 50%; top: -17px; transform: translateX(-50%);
+      font-family: 'Dancing Script', cursive;
+      background: white; padding: 0 20px;
+    }
+    .chapter-header {
+      display: flex; align-items: center; gap: 18px;
+      margin-bottom: 10px;
+    }
+    .chapter-icon {
+      font-size: 38px; color: var(--toscana-dourado);
+      padding: 6px 10px 6px 0; line-height: 1;
+    }
+    .chapter-title {
+      font-family: 'Playfair Display', serif;
+      color: var(--toscana-terracota);
+      font-size: 32px; font-weight: 700;
+      letter-spacing: 1.2px;
+      margin: 0;
+    }
+    .chapter-cite {
+      font-family: 'Dancing Script', cursive;
+      font-size: 18px; color: var(--toscana-vinho);
+      margin-bottom: 26px; margin-top: 4px;
+      text-align: center;
+      font-style: italic;
+    }
+    /* Tipografia */
+    h1, .h1 { font-family: 'Playfair Display', serif; font-size: 32pt; color: var(--toscana-vinho);}
+    h2, .h2 { font-family: 'Playfair Display', serif; font-size: 26pt; color: var(--toscana-terracota);}
+    h3, .h3 { font-family: 'Lato', sans-serif; font-size: 20pt; color: var(--toscana-dourado); font-weight: bold;}
+    h4, .h4 { font-size: 16pt; color: var(--toscana-verde);}
+    h5, .h5 { font-size: 15pt; color: var(--toscana-vinho);}
+    p, li { font-size: 13.2pt; color: var(--texto-principal); font-family: 'Crimson Text', Georgia, serif; line-height: 1.55;}
+    strong { color: var(--toscana-vinho); }
+    em { font-family: 'Dancing Script', cursive; color: var(--toscana-marrom);}
+    /* Boxes Especiais */
+    .dica-marco {
+      background: linear-gradient(135deg, #FDF5E6, #DAA520);
+      border-left: 4px solid #722F37;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-style: italic;
+      margin: 24px 0;
+      box-shadow: 0 2px 8px rgba(205,133,63,0.08);
+      position: relative;
+    }
+    .dica-marco:before {
+      content: '💡';
+      font-size: 20px;
+      position: absolute; left: -26px; top: 9px;
+    }
+    .historia-local {
+      background: #F5F5DC;
+      border: 2px dashed #CD853F;
+      padding: 18px;
+      border-radius: 10px;
+      margin: 22px 0;
+    }
+    .preco-destaque {
+      background: #722F37;
+      color: #FDF5E6;
+      padding: 10px 0;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      margin: 12px 0;
+      font-size: 14.5pt;
+    }
+    /* Divisor decorativo */
+    .divisor {
+      width: 100%; text-align: center; margin: 34px 0;
+    }
+    .divisor span {
+      color: var(--toscana-dourado); font-size: 28px; font-family: 'Dancing Script', cursive;
+      background: #fff;
+      padding: 0 18px;
+    }
+    /* Lista de ícones */
+    ul { margin: 8px 0 18px 0; padding-left: 0; }
+    li { list-style: none; padding-left: 26px; position: relative;}
+    li:before {
+      content: '🍷';
+      position: absolute; left: 0; font-size: 17px;
+      color: var(--toscana-terracota);
+    }
+    /* Sidebars */
+    .sidebar {
+      background: linear-gradient(90deg, #FDF5E6 90%, #DAA520 100%);
+      padding: 20px 26px; border-radius: 12px;
+      font-size: 14px; color: var(--texto-secundario);
+      margin: 20px 0 24px 0; border-left: 5px solid #CD853F;
+      box-shadow: 0 2px 6px rgba(205,133,63,0.07);
+    }
+    /* Timeline */
+    .timeline {
+      border-left: 4px solid var(--toscana-dourado);
+      margin: 30px 0 24px 0; padding-left: 20px;
+    }
+    .timeline-event {
+      margin-bottom: 16px;
+    }
+    .timeline-year {
+      color: var(--toscana-vinho); font-weight: bold; font-size: 15px;
+      margin-right: 7px;
+      font-family: 'Lato', sans-serif;
+    }
+    /* Map stylization */
+    .map-chianti {
+      width: 85%; display: block; margin: 32px auto 26px auto; border: 3px solid var(--toscana-verde); border-radius: 10px; box-shadow: 0 2px 8px rgba(44,24,16,0.10);
+    }
+    /* Footer/rodapé */
+    .page-footer {
+      position: absolute; left: 0; right: 0; bottom: 1.5cm;
+      font-family: 'Lato', sans-serif;
+      color: var(--toscana-marrom);
+      font-size: 13px;
+      text-align: center;
+      opacity: 0.88;
+      letter-spacing: 1px;
+    }
+    /* Índice */
+    .index-block {
+      max-width: 88%; margin: 0 auto 28px auto;
+    }
+    .index-list {
+      margin: 0; padding: 0;
+    }
+    .index-item {
+      display: flex; align-items: center; border-bottom: 1px dotted var(--toscana-terracota);
+      padding: 13px 0;
+      font-size: 15.5px;
+    }
+    .index-icon {
+      font-size: 21px; color: var(--toscana-terracota); margin-right: 13px;
+    }
+    .index-dots {
+      flex: 1; border-bottom: 1px dotted var(--toscana-marrom); margin: 0 12px; height: 1px;
+    }
+    .index-page { font-family: 'Lato', sans-serif; color: var(--toscana-vinho);}
+    /* Responsivo */
+    @media screen and (max-width: 900px) {
+      body, .ebook-page { padding: 1.2cm !important; min-width: auto; max-width: 100vw;}
+      .cover-title { font-size: 36px;}
+      .chapter-title { font-size: 20px;}
+    }
+    @media print {
+      .ebook-page { box-shadow: none !important; border-radius: 0 !important;}
+      html, body { background: white !important;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="ebook-page ebook-cover">
+  <div class="cover-ornament"></div>
+  <div class="cover-title">Os Segredos de Chianti</div>
+  <div class="cover-subtitle">Guia Completo para Casais por Marco Benedetti</div>
+  <div class="cover-ornament"></div>
+  <div class="cover-author">Guia Profissional Licenciado – Edição 2025</div>
+  <div class="cover-watermark"></div>
+</div>
+
+<!-- Página de rosto/dedicatória -->
+<div class="ebook-page">
+  <div style="font-family: 'Dancing Script', cursive; font-size: 22pt; color: var(--toscana-vinho); margin-top:2cm; text-align:center; letter-spacing:1px;">
+    "Alla dolce vita e all'amore che cresce tra le colline di Chianti."
+    <br>
+    <span style="font-size:15pt; font-family: 'Lato',sans-serif; color: var(--texto-secundario);">Para todos os casais apaixonados que sabem transformar cada viagem em história.</span>
+  </div>
+  <div class="page-footer">© 2025 Marco Benedetti | Guia Autorizado Toscana</div>
+</div>
+
+<!-- Índice -->
+<div class="ebook-page index-page">
+  <h1 class="h1" style="text-align:center; margin-bottom: 12px;">Índice</h1>
+  <div class="index-block">
+    <div class="index-item"><span class="index-icon">🛒</span>Tesouros dos Mercados Toscanos<div class="index-dots"></div><span>3</span></div>
+    <div class="index-item"><span class="index-icon">🍷</span>Vinhos para Presentear<div class="index-dots"></div><span>7</span></div>
+    <div class="index-item"><span class="index-icon">🏛️</span>Histórias e Segredos<div class="index-dots"></div><span>11</span></div>
+    <div class="index-item"><span class="index-icon">🍴</span>Pratos Imperdíveis<div class="index-dots"></div><span>16</span></div>
+    <div class="index-item"><span class="index-icon">🎭</span>Curiosidades e Lendas<div class="index-dots"></div><span>19</span></div>
+    <div class="index-item"><span class="index-icon">📱</span>Informações Práticas<div class="index-dots"></div><span>21</span></div>
+  </div>
+  <div class="page-footer">Página 2</div>
+</div>
+
+<!-- Exemplo de capítulo: Mercados -->
+<div class="ebook-page">
+  <div class="chapter-header"><span class="chapter-icon">🛒</span><h2 class="chapter-title">Capítulo 1: Tesouros dos Mercados Toscanos</h2></div>
+  <div class="chapter-cite">Il mercato è l'anima del paese</div>
+  <div class="ornamental-border"></div>
+  <h3 class="h3">🧀 Queijos Imperdíveis</h3>
+  <h4 class="h4">Pecorino di Pienza DOP</h4>
+  <div class="historia-local">
+    <p><strong>O que é:</strong> Queijo de ovelha envelhecido em caves naturais escavadas no tufo vulcânico. Textura única, derrete na boca.</p>
+    <p><strong>Como reconhecer:</strong> Crosta dourada, interior cremoso amarelado, furos pequenos.</p>
+    <p><strong>História:</strong> Produzido há mais de 500 anos pelos pastores nômades das colinas. Era moeda de troca no Renascimento.</p>
+  </div>
+  <div class="preco-destaque">💰 Preço justo: €18-22/kg</div>
+  <div class="dica-marco"><strong>Dica do Marco:</strong> Provem antes de comprar – cada produtor tem seu segredo! O verdadeiro Pecorino di Pienza tem sabor levemente picante que aumenta com a cura.</div>
+  <h4 class="h4">Marzolino del Chianti</h4>
+  <div class="historia-local">
+    <strong>Raridade:</strong> Feito só em março, leite de ovelhas de pasto selvagem. <br>
+    <strong>Onde encontrar:</strong> Mercato di San Donato (domingo), stand do Giovanni Rossi.<br>
+    <strong>Curiosidade:</strong> Dante citou este queijo na Divina Comédia!
+  </div>
+  <div class="preco-destaque">€35/kg – Vale cada centavo!</div>
+  <div class="divisor"><span>🍇 🍃 🍇</span></div>
+  <!-- Continue outros produtos do mercado -->
+  <div class="page-footer">Página 3</div>
+</div>
+
+<!-- Outras páginas/capítulos seguem o mesmo padrão. Basta duplicar a estrutura acima, trocando ícone, título, cor e conteúdo. -->
+
+</body>
+</html>
